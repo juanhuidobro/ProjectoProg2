@@ -85,7 +85,45 @@
 				<h2 class="products-title">Ingresar</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario de login. <br>
+			<h2 class="col-12"> <i>///////////////////////////////////////// <br>.<!--Completar header-->
+				<body>
+					<!--HEADER-->
+					<%- include('./header')%> 
+				
+					<div id="columna" class="container products">
+						<div class="">
+							<div>
+								<h2 class="Titulos"> Inicia sesión en Car O!</h2>
+							</div>
+				
+							<!-- Formulario LogIn-->
+							<form action="/" method="GET">
+								<p>
+									<input type="text" placeholder="Username" name="Nombre" id="Nombre de Usuario">
+								</p>
+								<p>
+									<input type="password" placeholder="Password" name="password" id="password">
+								</p>
+				
+								<button id="button" type="submit" name="login-button" id="login-button"></button>
+							</form>
+						</div>
+				
+						<div>
+							<!--Poner foto de ilustracion-->
+							<img id="ilustracion-login" src="" alt="Foto de Ilustracion">
+						</div>
+					
+					</div>
+					
+				
+				<!--Completar footer-->
+				<body>
+					<!--FOOTER-->
+					<%- include('./footer')%> 
+				
+				</body>
+				</html> <br>
 			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos <br>
 			Eliminen estás líneas y coloquen el formulario. <br>
 			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
