@@ -320,7 +320,7 @@ hr {
 }
 
 .product-detail-info {
-  border-right: 1px solid var(--yellow);
+  border-right: 1px solid red;
   padding: 15px;
   /* height: 100%; */
 }
@@ -378,7 +378,7 @@ hr {
 }
 
 .buy-now-button {
-  background-color: var(--light-blue);
+  background-color: grey;
   font-size: 1.6em;
   color: #ffffff;
   padding: 15px;
