@@ -476,7 +476,9 @@ textarea.form-input {
 .main-title{
   font-size: 25px;
   margin-bottom: 10px;
+  color: whitesmoke;
 }
+
 
 .btn{
   background-color: #1259c3;
