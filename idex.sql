@@ -1,4 +1,4 @@
-/*CREATE SCHEMA Proyecto_Parcial;
+CREATE SCHEMA Proyecto_Parcial;
 
 USE Proyecto_Parcial;
 
