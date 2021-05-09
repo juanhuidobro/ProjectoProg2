@@ -2,13 +2,15 @@ let autos ={
     lista: [
     {
         nombreAuto:"El Koenigsegg Agera",
-        Descripcion: "El Koenigsegg Agera es un superdeportivo biplaza sueco capaz de alcanzar en su versión más potente 1.155 caballos. Entre sus hitos más representativos podemos citar su capacidad para alcanzar los 300 km/h desde parado y volverse a detener por completo en sólo 21.19 segundos.",
-        Comentarios: "novedades",
+        descripcion: "El Koenigsegg Agera es un superdeportivo biplaza sueco capaz de alcanzar en su versión más potente 1.155 caballos. Entre sus hitos más representativos podemos citar su capacidad para alcanzar los 300 km/h desde parado y volverse a detener por completo en sólo 21.19 segundos.",
+        comentarios: "novedades",
+        productsTitle:"novedades",
     },
     {
         nombreAuto:"El Ferrari 488 Pista",
-        Descripcion: "El Ferrari 488 Pista es la versión más radical del Ferrari 488 GTB. Es el sucesor del 458 Speciale, considerado por algunos como el Ferrari más divertido jamás construido. Su motor, el V8 twin-turbo, entrega 720 CV de potencia a 8.000 rpm y un par máximo de 770 Nm a 3.000 rpm.",
-        Comentarios:"novedades"
+        descripcion: "El Ferrari 488 Pista es la versión más radical del Ferrari 488 GTB. Es el sucesor del 458 Speciale, considerado por algunos como el Ferrari más divertido jamás construido. Su motor, el V8 twin-turbo, entrega 720 CV de potencia a 8.000 rpm y un par máximo de 770 Nm a 3.000 rpm.",
+        comentarios:"novedades",
+        productsTitle:"novedades",
     },
 {
     nombreAuto:"El Ferrari Roma",
@@ -63,4 +65,7 @@ let autos ={
 },
 
     ]
+
+
 }
+module.exports = autos;
