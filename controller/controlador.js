@@ -10,9 +10,15 @@ let controlador = {
             .catch((err)=> `Error: ${err}`)
     },
     product:  (req, res) =>{
-        res.render('product')
+        db.productos.findAll({
+            limit: 10
+        })
+            .then((resultados)=> res.render('productos'),{resultados})
+            .catch((err)=> `Error: ${err}`)
+        //res.render('product')
     },
     productAdd:  (req, res) =>{ 
+        db.product.create();
         return res.render('product-add')
     },
     productEdit:  (req, res) =>{ 
@@ -23,7 +29,7 @@ let controlador = {
         let searchResults = req.query.search
         productos.findAll({
             where: [
-                {title:{[op.like]:`%${searchResults}%` }}
+                {marca:{[op.like]:`%${searchResults}%` }}
             ]
         })
         .then((resultados)=> res.render('searchResults'),{resultados})
