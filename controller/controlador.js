@@ -1,13 +1,17 @@
 const db = require('../database/models')
-const producto = db.Producto;
+
 const op = db.Sequelize.Op;
 
 let controlador = {
 
-    index:  (req, res) =>{ // Es la pagina que se va a ver cuando el usuario busque home
-        productos.findAll()
-            .then((resultados)=> res.render('productos'),{resultados})
-            .catch((err)=> `Error: ${err}`)
+    index:  (req, res) =>{ 
+        console.log('paso por aqui');
+        // Es la pagina que se va a ver cuando el usuario busque home
+        db.Productos.findAll()
+            .then((resultados)=> {
+                return res.render('index',{productos:resultados})
+            })
+            .catch((err)=> `Error: ${err}`);
     },
     product:  (req, res) =>{
         db.productos.findAll({
