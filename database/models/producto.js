@@ -30,11 +30,17 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             type: dataTypes.STRING,//Chekear no se si esta bien
         },
+        usuario_id:{
+            allowNull: false,
+            type: dataTypes.INTEGER,//Chekear no se si esta bien
+        },
         
 };
 let config={
     tableName:"productos",
     timeStamps: false,
+    createdAt: false,
+    updatedAt: false,
 };
 const Producto = sequelize.define(alias,cols,config);
 return Producto;

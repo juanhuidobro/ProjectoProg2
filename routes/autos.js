@@ -23,9 +23,5 @@ router.get ('/modelo/:modelo/:anio?',(req,res)=>{
     res.send(`Autos modelo ${m} del Año ${a}`)
 })*/
 
-router.get ('/product/:nombreAuto', (req,res)=>{
-    
-    res.send(`Los mas comentados  `)
-})
 
 module.exporta = router

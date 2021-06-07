@@ -5,21 +5,20 @@ const op = db.Sequelize.Op;
 let controlador = {
 
     index:  (req, res) =>{ 
-        console.log('paso por aqui');
+        console.log('paso por aqui 1');
         // Es la pagina que se va a ver cuando el usuario busque home
         db.Productos.findAll()
             .then((resultados)=> {
-                return res.render('index',{productos:resultados})
+                 console.log('paso por aqui 2');
+                 res.render('index',{productos:resultados})
             })
             .catch((err)=> `Error: ${err}`);
     },
     product:  (req, res) =>{
-        db.productos.findAll({
-            limit: 10
-        })
-            .then((resultados)=> res.render('productos'),{resultados})
+        db.Productos.findByPk(
+            req.params.id
+        ).then((resultados)=> res.render('product',{producto:resultados}))
             .catch((err)=> `Error: ${err}`)
-        //res.render('product')
     },
     productAdd:  (req, res) =>{ 
         db.product.create();
