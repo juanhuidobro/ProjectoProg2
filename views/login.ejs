@@ -24,14 +24,20 @@
 							</div>
 							
 							<!-- Formulario LogIn-->
-							<form action="/" method="GET">
+							<% if (locals.error){ %>
+								<p><%= error.login %></p>
+							<%}%>
+							<form action="/login" method="POST">
 								<p>
-									<input type="text" placeholder="Mail" name="Nombre" id="Nombre de Usuario">
+									<input type="text" placeholder="mail" name="mail" value="">
 								</p>
 								<p>
-									<input type="password" placeholder="Password" name="password" id="password">
+									<input type="password" placeholder="contraseña" name="password" value="">
 								</p>
-				
+								<p>
+									<input type="checkbox"  name="rememberPassword">
+									Recordar usuario
+								</p>
 								<button id="button" type="submit" name="login-button" id="login-button"></button>
 							</form>
 						</div>
