@@ -55,11 +55,11 @@
 	
 				<ul class="right-navbar">
 					<li><a href="/perfil/profile">
-							Nombre del usuario <i class="fas fa-user"></i>
+							Bienvenido <%=user.name%> <i class="fas fa-user"></i>
 						</a>
 					</li>
 					<li>
-						<form action="" method="post">
+						<form action="/logout" method="post">
 							<button class="logout" type="submit">
 								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
 							</button>
