@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<body>
+	<%-include('./partials/headerLogueado')%>
+	
+	<!-- product detail -->
+	<div class="container products-wrapper">
+		<div class="d-flex align-items-center">
+			<h2 class="products-title"><%-producto.marca%></h2> 
+			<p class="product-detail-description">
+				<a href="home/product-add">Editar</a>
+			</p>
+		</div>
+		<div class="product-detail">
+			<div class="row">
+				<article class="col-12 col-lg-8 product-detail-info">
+					<img src="/<%-producto.imagen %>" alt="Koenigsegg" class="product-detail-img">
+					<p class="product-detail-description">
+						<%-producto.descripcion%></p>
+				</article>
+				<div class="col-12 col-lg-4">
+					<!-- <section class="comments">
+						<article>
+							<img src="https://via.placeholder.com/35" alt="">
+							<div class="data">
+								<p class="user">
+								<strong> <a href="perfil/profile">Juanperez: </a> </strong>
+								 Que buen auto,me encanta.</p>
+							</div>
+						</article>
+						<article>
+							<img src="https://via.placeholder.com/35" alt="">
+							<div class="data">
+								<p class="user">
+									<strong> <a href="profile.html">JuanaMartinez: </a> </strong>
+									No me gusta el color</p>
+							</div>
+						</article>
+						<article>
+							<img src="https://via.placeholder.com/35" alt="">
+							<div class="data">
+								<p class="user">
+									<strong> <a href="profile.html">AndreaBocelli: </a> </strong>
+									El auto de mis sueños
+									</p>
+							</div>
+						</article>
+						<article>
+							<img src="https://via.placeholder.com/35" alt="">
+							<div class="data">
+								<p class="user">
+									<strong> <a href="profile.html">NicolasBellomo: </a> </strong>
+									Es un misil </p>
+							</div>
+						</article>
+						<article>
+							<img src="https://via.placeholder.com/35" alt="">
+							<div class="data">
+								<p class="user">
+									<strong> <a href="profile.html">FranGomez: </a> </strong>
+									Tengo que dejar un riñon para pagarlo</p>
+							</div>
+						</article>
+						
+					</section>
+					-->
+
+
+					<form class="form" action="" method="POST">
+				
+						<p>
+								<label for="Descripcion ">Comentario </label>
+								<input type="text" placeholder="Comentario" name="Comentario" id="Comentario">
+						</p>
+						
+						<p>
+							<label for="Fecha">Fecha</label>
+							<input type="text" placeholder="Fecha" name="Fecha" id="Fecha">
+						</p>
+
+						<p>
+							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						</p>
+
+					</form>
+
+
+					<hr>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /product detail -->
+
+	<!-- footer -->
+	<%- include("./partials/footer") %>
+	<!-- /footer -->
+
+</body>	
+</html>
