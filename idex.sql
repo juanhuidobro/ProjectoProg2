@@ -10,11 +10,7 @@ CREATE TABLE usuarios (
     fechaDeNacimiento VARCHAR(100) NOT NULL,
     edad INT UNSIGNED NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(100) NOT NULL,
-    rememberPassword VARCHAR(100) NULL,
-    createAt TIMESTAMP NULL,
-    updateAt TIMESTAMP NULL,
-    avatar VARCHAR (255) NULL
+    password VARCHAR(100) NOT NULL
 );
 CREATE TABLE productos (
 	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -24,8 +20,6 @@ CREATE TABLE productos (
     descripcion VARCHAR(250) NOT NULL,
     precio VARCHAR(250) NOT NULL,
 	email VARCHAR(100) NOT NULL,
-    createAt TIMESTAMP NULL,
-    updateAt TIMESTAMP NULL,
     usuario_id INT UNSIGNED NOT NULL,
     FOREIGN KEY (usuario_id) REFERENCES usuarios (id)
 );
