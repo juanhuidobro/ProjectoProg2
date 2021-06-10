@@ -17,7 +17,7 @@ CREATE TABLE productos (
     marca VARCHAR(50) NOT NULL,
     modelo VARCHAR(50) NOT NULL,
 	imagen VARCHAR(300) NOT NULL,
-    descripcion VARCHAR(250) NOT NULL,
+    descripcion VARCHAR(500) NOT NULL,
     precio VARCHAR(250) NOT NULL,
 	email VARCHAR(100) NOT NULL,
     usuario_id INT UNSIGNED NOT NULL,
