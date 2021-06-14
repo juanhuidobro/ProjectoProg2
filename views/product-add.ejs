@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-
 <head>
-	<%-include('./partials/headerLogueado')%>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link width="" rel="shortcut icon" href="./images/logoTerminado.png" />
+	
+	<title> Car O </title>
+			<!-- Font Awesome Stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+	<!-- Bootstrap Grid Stylesheet -->
+	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
+	<!-- Own Stylesheet -->
+	<link rel="stylesheet" href="/stylesheets/app.css">
 </head>
 
 <body>
 	
+	<%-include('./partials/headerLogueado')%>
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -16,65 +26,56 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> <!--Completar header-->
-				<body>
-					
+			<h2 class="col-12"> 
 					<div id="columna" class="container products">
-						<div class="">
+						<div class="" style="color:white;">
 							<div>
-								<h2 class="Products-title">Agregar producto</h2>
+								<h2 class="products-title">Agregar producto</h2>
 							</div>
 				
 							<!-- Formulario Agregar producto-->
-							<form action="/" method="GET">
+							<form action="/productos/agregarProducto" method="POST">
 								<p>
-									<label for="nombreProducto">Nombre del producto:</label> 
-									<input type="text" placeholder="Nombre" name="NombreProducto" id="nombreProducto">
+									<label for="marca">Marca:</label> 
+									<input name="marca" id="marca" type="text" placeholder="Marca" required>
 								</p>
 
 								<p>
-									<label for="Modelo">Modelo</label> <!-- ¿Con un FOR? -->
-									<input type="text" placeholder="Nombre" name="NombreProducto" id="nombreProducto">
-								</p>
-								
-								<p>
-									<label for="Descripcion ">Descripcion </label>
-									<input type="text" placeholder="Nombre" name="NombreProducto" id="nombreProducto">
+									<label for="modelo">Modelo</label> 
+									<input name="modelo" id="modelo" type="text" placeholder="Modelo" required >
 								</p>
 								
 								<p>
 									<label for="Foto del producto">Foto del producto</label>
-									<input id="file"  type="file" name="FotoProducto" id="FotoProducto">
+									<input id="imagen"  type="file" name="imagen" required>
 									<img src="/public/images/products/autos1.jpeg" alt="">
 								</p>
-				
+
 								<p>
-									<label for="Precio">Precio</label>
-									<input type="text" placeholder="Precio" name="Precio" id="Precio">
-								</p>
-								<p>
-									<button id="button" type="submit" name="editar-perfil" id="editar-perfil">Agregar Producto</button>
+									<label for="descripcion">Descripcion </label>
+									<input name="descripcion" id="descripcion" type="text" placeholder="Descripcion" required >
 								</p>
 				
-								<!--Poner foto submit-->
+								<p>
+									<label for="precio">Precio</label>
+									<input name="precio" id="Precio" type="text" placeholder="Precio" required>
+								</p>
+
+								<p>
+									<label for="email">E-mail</label>
+									<input name="email" id="email" type="e-mail" placeholder="Correo electronico" required>
+								</p>
+				
+								<p>
+									<button id="button" name="editar-perfil" type="submit" >Agregar Producto</button>
+								</p>
+				
 							</form>
 						</div>
 					
 					</div>
 					
 				
-				<!--Completar footer-->
-				<body>
-				
-				</body>
-				</html> <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos. <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
-
-
 	<!-- footer -->
 	<%- include("./partials/footer") %>
 	<!-- /footer -->

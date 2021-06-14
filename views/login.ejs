@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- Include Head -->
-
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link width="" rel="shortcut icon" href="/images/logoTerminado.png" />
+	<title> Car O </title>
+	<!-- Font Awesome Stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+	<!-- Bootstrap Grid Stylesheet -->
+	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
+	<!-- Own Stylesheet -->
+	<link rel="stylesheet" href="/stylesheets/app.css">
 
 <body>
-	<%-include('./partials/headerLogueado')%>
+	<%-include('./partials/headerDesLogueado')%>
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -13,8 +21,7 @@
 				<h2 class="products-title">Ingresar</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br>.<!--Completar header-->
-				<body>
+			<h2 class="col-12"> 
 					
 				
 					<div id="columna" class="container products">
@@ -24,15 +31,15 @@
 							</div>
 							
 							<!-- Formulario LogIn-->
-							<form action="/" method="GET">
+							<form action="/users/login" method="POST">
 								<p>
-									<input type="text" placeholder="Mail" name="Nombre" id="Nombre de Usuario">
+									<input name="email" id="email" type="text" placeholder="Ingrese e-mail" required>
 								</p>
 								<p>
-									<input type="password" placeholder="Password" name="password" id="password">
+									<input name="password" id="password" type="password" placeholder="Ingrese Contraseña" >
 								</p>
 				
-								<button id="button" type="submit" name="login-button" id="login-button"></button>
+								<button type="submit" name="login-button">Iniciar Sesion</button>
 							</form>
 						</div>
 				
@@ -43,15 +50,6 @@
 					
 					</div>
 					
-				
-				<!--Completar footer-->
-				 <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
-
 
 	<!-- footer -->
 	<%- include("./partials/footer") %>

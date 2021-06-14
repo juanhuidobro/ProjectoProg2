@@ -7,7 +7,8 @@ let perfilControlador = {
         res.render('profile')
     },
     register:  (req, res) =>{ 
-        res.render('register')
+        console.log('entro');
+        res.render('register');
     },
 
 }

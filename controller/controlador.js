@@ -1,9 +1,8 @@
 const db = require('../database/models')
-
+var fs = require('fs');
 const op = db.Sequelize.Op;
 
 let controlador = {
-
     index:  (req, res) =>{ 
         console.log('paso por aqui 1');
         // Es la pagina que se va a ver cuando el usuario busque home
@@ -20,14 +19,12 @@ let controlador = {
         ).then((resultados)=> res.render('product',{producto:resultados}))
             .catch((err)=> `Error: ${err}`)
     },
-    productAdd:  (req, res) =>{ 
-        db.product.create();
-        return res.render('product-add')
+    productAdd:  (req, res) =>{
+        res.render('product-add');
     },
     productEdit:  (req, res) =>{ 
-        res.render('product-edit')
+        res.render('product-edit');
     },
-    
     searchResults:  (req, res) =>{ 
         let searchResults = req.query.search
         productos.findAll({

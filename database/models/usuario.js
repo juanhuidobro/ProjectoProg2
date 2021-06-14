@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             type: dataTypes.STRING
         },
-        fechaDeNAcimiento:{
+        fechaDeNacimiento:{
             allowNull:false,
             type: dataTypes.DATE, //Chekear no se si esta bien
         },
@@ -34,6 +34,8 @@ module.exports = (sequelize, dataTypes) => {
 let config={
     tableName:"usuarios",
     timeStamps: false,
+    createdAt: false,
+    updatedAt: false,
 };
 const Usuario = sequelize.define(alias,cols,config);
 return Usuario;

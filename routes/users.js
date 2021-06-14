@@ -1,5 +1,4 @@
 var express = require('express');
-const usersControlador = require('../controller/usersControlador');
 var router = express.Router();
 var usersController = require('../controller/usersControlador')
 
@@ -8,6 +7,8 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.post('/logout', usersControlador.logout)
+router.post('/logout', usersController.logout)
+router.post('/login', usersController.login)
+router.post('/registrarUsuario', usersController.registrarUsuario)
 
 module.exports = router;
