@@ -11,7 +11,7 @@ let controlador = {
                  console.log('paso por aqui 2');
                  res.render('index',{productos:resultados})
             })
-            .catch((err)=> `Error: ${err}`);
+            .catch((err)=> console.log(err));
     },
     product:  (req, res) =>{
         db.Productos.findByPk(
