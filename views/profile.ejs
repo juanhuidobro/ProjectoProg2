@@ -17,7 +17,7 @@
 
 <body>
 
-	<%-include('./partials/headerDeslogueado')%>
+	<%-include('./partials/headerLogueado')%>
 
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
@@ -27,7 +27,7 @@
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title">FranGomez
+					<h1 class="main-title"> <%-usuario.nombre%>
 						<a href="/home/profile-edit">
 							<i class="fas fa-cog"></i>
 						</a>
@@ -36,7 +36,7 @@
 				</div>
 				<div>
 					<ul class="perfil-descipcion">
-						<li>8 productos</li>
+						<li> <%product.usuario_id%></li>
 						<li>200 seguidores</li>
 						<li>300 comentarios</li>
 					</ul>
