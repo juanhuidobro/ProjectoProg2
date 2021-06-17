@@ -18,6 +18,13 @@
 <!-- Include Head -->
 
 <body>
+
+	<% if (local.user != null) { %>
+		<%- include(‘headerLogueado’) 
+	<% } else { %>
+		<%- include(‘headerDeslogueado’) 
+	<% } %>
+
 	<!-- Header -->
 	<header class="main-header">
 		<div class="container">

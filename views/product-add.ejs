@@ -34,7 +34,7 @@
 							</div>
 				
 							<!-- Formulario Agregar producto-->
-							<form action="/productos/agregarProducto" method="POST">
+							<form action="/productos/agregarProducto" method="POST" enctype="multipart/form-data">
 								<p>
 									<label for="marca">Marca:</label> 
 									<input name="marca" id="marca" type="text" placeholder="Marca" required>
@@ -48,7 +48,8 @@
 								<p>
 									<label for="Foto del producto">Foto del producto</label>
 									<input id="imagen"  type="file" name="imagen" required>
-									<img src="/public/images/products/autos1.jpeg" alt="">
+									<img src="/public/images/products" alt="">
+									<% res.render ('') %>  
 								</p>
 
 								<p>

@@ -9,7 +9,7 @@ let productosControlador = {
         db.Productos.create({
             marca:marca,
             modelo:modelo,
-            imagen: 'images/products/autos1.jpeg',
+            imagen: '/images/productos/',//req.file.filename//
             descripcion:descripcion,
             precio:precio,
             email:email,
