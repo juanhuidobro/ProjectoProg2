@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link width="" rel="shortcut icon" href="./images/logoTerminado.png" />
+	
+	<title> Car O </title>
+			<!-- Font Awesome Stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+	<!-- Bootstrap Grid Stylesheet -->
+	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
+	<!-- Own Stylesheet -->
+	<link rel="stylesheet" href="/stylesheets/app.css">
+</head>
+
+<body>
+	
+	<%-include('./partials/headerLogueado')%>
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Agregar productos</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<h2 class="col-12"> 
+					<div id="columna" class="container products">
+						<div class="" style="color:white;">
+							<div>
+								<h2 class="products-title">Agregar producto</h2>
+							</div>
+				
+							<!-- Formulario Agregar producto-->
+							<form action="/productos/agregarProducto" method="POST" enctype="multipart/form-data">
+								<p>
+									<label for="marca">Marca:</label> 
+									<input name="marca" id="marca" type="text" placeholder="Marca" required>
+								</p>
+
+								<p>
+									<label for="modelo">Modelo</label> 
+									<input name="modelo" id="modelo" type="text" placeholder="Modelo" required >
+								</p>
+								
+								<p>
+									<label for="Foto del producto">Foto del producto</label>
+									<input id="imagen"  type="file" name="imagen" required>
+									<img src="/public/images/products" alt="">
+									<% res.render ('') %>  
+								</p>
+
+								<p>
+									<label for="descripcion">Descripcion </label>
+									<input name="descripcion" id="descripcion" type="text" placeholder="Descripcion" required >
+								</p>
+				
+								<p>
+									<label for="precio">Precio</label>
+									<input name="precio" id="Precio" type="text" placeholder="Precio" required>
+								</p>
+
+								<p>
+									<label for="email">E-mail</label>
+									<input name="email" id="email" type="e-mail" placeholder="Correo electronico" required>
+								</p>
+				
+								<p>
+									<button id="button" name="editar-perfil" type="submit" >Agregar Producto</button>
+								</p>
+				
+							</form>
+						</div>
+					
+					</div>
+					
+				
+	<!-- footer -->
+	<%- include("./partials/footer") %>
+	<!-- /footer -->
+</body>
+
+</html>
