@@ -28,7 +28,7 @@ let productosControlador = {
             descripcion:descripcion,
             precio:precio,
             email:email,
-            usuario_id: 1
+            usuario_id: req.session.usuario.id
         }).then(producto => {
             console.log(producto.get({
               plain: true

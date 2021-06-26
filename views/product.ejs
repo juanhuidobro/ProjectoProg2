@@ -69,9 +69,13 @@
 
 
 					<form class="form" action="" method="POST">
-				
+						<% if(locals.usuario != undefined){ %>
+						
 						<p>
-								<label for="Descripcion ">Comentario </label>
+							<label for="email"> <%-producto[i].usuario.nombre%> </label>
+						</p>	
+						<p>
+								<label for="Descripcion"> Comentario </label>
 								<input type="text" placeholder="Comentario" name="Comentario" id="Comentario">
 						</p>
 						
@@ -84,8 +88,12 @@
 							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 						</p>
 
+						<% }else { %>
+							<p>usted no puede ingresar un comentario no esta registrado</p>
+						
+						<%}%>
 					</form>
-
+					
 
 					<hr>
 				
