@@ -6,6 +6,14 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
+        created_at: {
+            type: dataTypes.DATE,
+            allowNull: true,
+        },
+        updated_at: {
+            type: dataTypes.DATE,
+            allowNull: true,
+        },
         marca:{
             allowNull: false,
             type: dataTypes.STRING,
@@ -28,11 +36,12 @@ module.exports = (sequelize, dataTypes) => {
         },
         email:{
             allowNull: false,
-            type: dataTypes.STRING,//Chekear no se si esta bien
+            type: dataTypes.STRING,
+            unique: true, 
         },
         usuario_id:{
             allowNull: false,
-            type: dataTypes.INTEGER,//Chekear no se si esta bien
+            type: dataTypes.INTEGER,
         },
         
 };
@@ -43,5 +52,13 @@ let config={
     updatedAt: false,
 };
 const Producto = sequelize.define(alias,cols,config);
+/*Producto.associate = (models)=> {
+    //relacion
+    Producto.belongsTo (models.Usuario, {
+        as: 'usuario',
+        foreignKey: 'usuario_id'
+    })
+    }*/
+
 return Producto;
 }

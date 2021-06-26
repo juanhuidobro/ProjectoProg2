@@ -29,7 +29,37 @@ let usersControlador = {
             });
         })
 
-    },
+    }, 
+
+    /*login: function(req, res){
+        //const {email,password} = req.body;
+        //console.log(req.body);
+        Usuario.findOne({
+            where:{email: req.body.email},
+        }).then(Usuario => {
+            if(user == null){
+                errors.login = "email es incorrecto"
+                res.locals.error = errors
+               // return res.render ('users')
+               return res.redirect('/perfil/login')
+
+            } else if(bcrypt.compareSync(req.body.password, usuario.password) == false){ 
+                        errors.login ="password es incorrecta";
+                        res.locals.error =errors;
+                        //return res.render('users');
+                        return res.redirect('/perfil/login')
+                }else {
+                    req.session.user =user;
+                    if (req.body.rememberme != undefined){
+                        res.cookie('userID', user.id,{maxAge: 1000 * 60 * 5});
+                    }
+                    
+                }
+                return res.redirect('/')
+        })
+        .catch (err => console.log(err))
+        },*/
+
     registrarUsuario: function(req, res){
         console.log(req.body);
         const {nombre, apellido, fechaDeNacimiento,edad, email,  password, passwordConfirm} = req.body;

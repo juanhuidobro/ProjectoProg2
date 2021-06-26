@@ -6,6 +6,14 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
+        created_at: {
+            type: dataTypes.DATE,
+            allowNull: true,
+        },
+        updated_at: {
+            type: dataTypes.DATE,
+            allowNull: true,
+        },
         nombre:{
             allowNull: false,
             type: dataTypes.STRING,
@@ -16,19 +24,20 @@ module.exports = (sequelize, dataTypes) => {
         },
         fechaDeNacimiento:{
             allowNull:false,
-            type: dataTypes.DATE, //Chekear no se si esta bien
+            type: dataTypes.DATE, 
         },
         edad:{
             allowNull: false,
-            type: dataTypes.INTEGER, //Chekear no se si esta bien
+            type: dataTypes.INTEGER, 
         },
         email:{
             allowNull: false,
-            type: dataTypes.STRING,//Chekear no se si esta bien
+            type: dataTypes.STRING,
+            unique: true,
         },
         password:{
             allowNull: false,
-            type: dataTypes.STRING, //Chekear no se si esta bien
+            type: dataTypes.STRING,
         }
 };
 let config={
@@ -38,5 +47,6 @@ let config={
     updatedAt: false,
 };
 const Usuario = sequelize.define(alias,cols,config);
+
 return Usuario;
 }

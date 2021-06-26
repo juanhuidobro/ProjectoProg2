@@ -25,7 +25,7 @@ let controlador = {
     productEdit:  (req, res) =>{ 
         res.render('product-edit');
     },
-    searchResults:  (req, res) =>{ 
+   /* searchResults:  (req, res) =>{ 
         let searchResults = req.query.search
         productos.findAll({
             where: [
@@ -36,7 +36,27 @@ let controlador = {
         .catch((err)=> `Error: ${err}`)
 
         //res.render('search-results')
-    },
+    },*/
+    searchResults:(req,res) =>{
+        let buscar = req.query.search
+        db.Productos.findAll({
+      
+          where:{[op.or]:[//buscar por marca o modelo o
+            {modelo:{[op.like]: buscar}}, //buscar algo parecido 
+            {marca:{[op.like]: buscar}},
+            {descripcion:{[op.like]: `${buscar}`}},
+      
+          ]
+        },include: [
+          //conectamos con el belongsTo
+          {asociation: "usuarios"},
+          {asociation: "comentarios"},
+        ], })
+        .then(resultados =>{
+          return res.render("buscar",{"SearchResults": resultados, busqueda} )
+        })
+        .catch (err => console.log(err))
+      },
 
 }
 module.exports = controlador; 

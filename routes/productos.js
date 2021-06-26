@@ -3,6 +3,11 @@ var router = express.Router();
 var productosController = require('../controller/productosControlador');
 var multer = require ('multer');
 var path = require('path');
+router.get('/', productosController.index);
+
+router.get('/searchResults', productosController.searchResults)
+
+//router.get('/edit',productosController.editar)
 
 var storage = multer.diskStorage({
       destination: function (req, file, cb) {
@@ -19,8 +24,8 @@ var storage = multer.diskStorage({
 router.get('/agregarProducto', productosController.agregarProducto)
 router.post('/agregarProducto', productosController.agregarProducto)
 
+router.get('/searchResults', productosController.searchResults)
 
-
-router.post('/', upload.single('imagen'), productosController.agregarProducto);
+//router.post('/', upload.single('imagen'), productosController.agregarProducto);
 
 module.exports = router;

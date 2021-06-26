@@ -31,6 +31,10 @@
 							</div>
 							
 							<!-- Formulario LogIn-->
+							<% if(locals.errors){ %>
+								<p class="alert" > <%= errors.login %><p>
+							<% } %>
+							
 							<form action="/users/login" method="POST">
 								<p>
 									<input name="email" id="email" type="text" placeholder="ingrese@email.com" required>
