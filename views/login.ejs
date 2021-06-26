@@ -31,8 +31,8 @@
 							</div>
 							
 							<!-- Formulario LogIn-->
-							<% if(locals.errors){ %>
-								<p class="alert" > <%= errors.login %><p>
+							<% if(errors.login!=''){ %>
+								<p class="alert" style="color:red;"><%= errors.login %><p>
 							<% } %>
 							
 							<form action="/users/login" method="POST">

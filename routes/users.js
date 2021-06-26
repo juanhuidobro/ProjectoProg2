@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.post('/logout', usersController.logout)
+router.get('/logout', usersController.logout)
 router.post('/login', usersController.login)
 router.post('/registrarUsuario', usersController.registrarUsuario)
 

@@ -1,7 +1,7 @@
 let perfilControlador = {
 
     login:  (req, res) =>{ 
-        res.render('login')
+        res.render('login',{errors:{login:''}})
     },
     profile:  (req, res) =>{ 
         res.render('profile')
