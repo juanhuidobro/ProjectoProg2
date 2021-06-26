@@ -59,6 +59,6 @@ const Producto = sequelize.define(alias,cols,config);
         foreignKey: 'usuario_id'
     })
     }*/
-
+    
 return Producto;
 }

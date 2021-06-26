@@ -20,11 +20,11 @@ let productosControlador = {
     agregarProducto: function(req, res) {
         console.log(req.body);
         const {marca, modelo,imagen, descripcion, precio, email} = req.body; 
-
+        
         db.Productos.create({
             marca:marca,
             modelo:modelo,
-            imagen: '/images/productos/',//'/images/productos/${req.file.filename}'
+            imagen: '/images/productos/${req.file.filename}',
             descripcion:descripcion,
             precio:precio,
             email:email,
@@ -44,15 +44,15 @@ searchResults:(req,res) =>{
       {modelo:{[op.like]: buscar}}, //buscar algo parecido 
       {marca:{[op.like]: buscar}},
       {descripcion:{[op.like]: `${buscar}`}},
-
+      
     ]
   },include: [
     //conectamos con el belongsTo
-    {asociation: "usuarios"},
-    {asociation: "comentarios"},
+    {association: "usuarios"},
+    {association: "comentarios"},
   ], })
   .then(resultados =>{
-    return res.render("buscar",{"SearchResults": resultados, busqueda} )
+    return res.render("buscar",{"searchResults": resultados, buscar} )
   })
   .catch (err => console.log(err))
 },
