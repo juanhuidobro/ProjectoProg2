@@ -433,6 +433,13 @@ hr {
 }
 
 /*====== Formularios ======*/
+
+.recordarme {
+  color: whitesmoke;
+  font-family: 'Inconsolata', monospace;
+  
+}
+
 .form-label {
   display: inline-block;
   font-size: 1.6em;
@@ -467,6 +474,11 @@ textarea.form-input {
   border-bottom: 1px solid #ccc;
   padding-bottom: 30px;
   font-size: 16px;
+}
+
+.perfil-datos {
+  color: whitesmoke;
+  font-family: 'Inconsolata', monospace;
 }
 
 .foto-perfil{

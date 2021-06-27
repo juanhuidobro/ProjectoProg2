@@ -17,9 +17,9 @@
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
-			<div class="col-12">
+		<!--	<div class="col-12"></div>
 				<h2 class="products-title">Ingresar</h2>
-			</div>
+			</div> -->
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
 					
@@ -27,12 +27,12 @@
 					<div id="columna" class="container products">
 						<div class="">
 							<div>
-								<h2 class="Titulos"> Inicia sesión en Car O!</h2>
+								<h2 class="products-title"> Inicia sesión en Car O!</h2>
 							</div>
 							
 							<!-- Formulario LogIn-->
 							<% if(errors.login!=''){ %>
-								<p class="alert" style="color:red;"><%= errors.login %><p>
+								<p class="error" ><%= errors.login %><p>
 							<% } %>
 							
 							<form action="/users/login" method="POST">
@@ -43,10 +43,10 @@
 									<input name="password" id="password" type="password" placeholder="Ingrese Contraseña" >
 								</p>
 								<p>
-									<input type="checkbox" class="bi bi-check-circle-fill" name="rememberme" />
-									Recordame
+									<input type="checkbox" name="rememberme" />
+									<p class="recordarme" >Recordarme</p> 
 								<p>
-				
+									
 								<button type="submit" name="login-button">Iniciar Sesion</button>
 							</form>
 						</div>

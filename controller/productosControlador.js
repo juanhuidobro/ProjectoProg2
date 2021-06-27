@@ -19,19 +19,19 @@ let productosControlador = {
   
     agregarProducto: function(req, res) {
         console.log(req.body);
-        const {marca, modelo,imagen, descripcion, precio, email} = req.body; 
+        const {marca, modelo, descripcion, precio, email} = req.body; 
         
         db.Productos.create({
             marca:marca,
             modelo:modelo,
-            imagen: '/images/productos/${req.file.filename}',
+            imagen: `/public/images/${req.file.filename}`,
             descripcion:descripcion,
             precio:precio,
             email:email,
             usuario_id: req.session.usuario.id
         }).then(producto => {
             console.log(producto.get({
-              plain: true
+            plain: true
             }));
           }).catch(error => console.log(error)); 
     return res.redirect("/")
