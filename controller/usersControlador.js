@@ -54,6 +54,7 @@ let usersControlador = {
                 edad: edad,
                 email: email,
                 password: passwordHash,
+                avatar: req.file.filename
             }).then(usuario => {
                 // let's assume the default of isAdmin is false:
                 console.log(usuario.get({

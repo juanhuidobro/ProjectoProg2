@@ -38,6 +38,10 @@ module.exports = (sequelize, dataTypes) => {
         password:{
             allowNull: false,
             type: dataTypes.STRING,
+        },
+        avatar:{
+            type:dataTypes.STRING,
+            allowNull: true
         }
 };
 let config={
