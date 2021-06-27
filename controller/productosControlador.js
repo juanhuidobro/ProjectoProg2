@@ -4,19 +4,32 @@ const productos = db.Productos;
 
 let productosControlador = {
   index: (req,res)=>{
-    producto.findAll()
+    producto.findAll({
+    include: [{association: 'usuario'},],
+    order: [['created_at', 'DESC']]})
       .then((resultados)=> res.render('productos',{resultados}))
       .catch((err)=>`Error:${err}`)
   },
   show: (req,res) =>{
     let primaryKey = req.params.id;
-    producto.findByPk (primaryKey,{
+    productos.findByPk (primaryKey,{
       include: [{association: 'usuario'}]
     })
-    .then (resultados => res.render('productos',{resultados}))
+    .then (producto => {
+        console.log(producto)
+        db.Comentarios.findAll({where: {
+          producto_id: producto.id //Este producto lo traemos del model, que son todos los comentarios de un solo producto
+      },
+      include: [
+          { association: "usuario" },
+      ],})
+      .then (comentarios => {
+        ;
+        res.render('product',{producto, comentarios})})
+      })
     .catch(err => console.log(err))
   },
-  
+
     agregarProducto: function(req, res) {
         console.log(req.body);
         const {marca, modelo, descripcion, precio, email} = req.body; 
@@ -37,25 +50,26 @@ let productosControlador = {
     return res.redirect("/")
 },
 searchResults:(req,res) =>{
-  let buscar = req.query.search
+  let resultadoBusqueda = req.query.search
   db.Productos.findAll({
 
     where:{[op.or]:[//buscar por marca o modelo o
-      {modelo:{[op.like]: buscar}}, //buscar algo parecido 
-      {marca:{[op.like]: buscar}},
-      {descripcion:{[op.like]: `${buscar}`}},
+      {modelo:{[op.like]: resultadoBusqueda}}, //buscar algo parecido 
+      {marca:{[op.like]: resultadoBusqueda}},
+      //{descripcion:{[op.like]: `${req.query.search}`}},
       
     ]
   },include: [
     //conectamos con el belongsTo
-    {association: "usuarios"},
-    {association: "comentarios"},
+   // {association: "usuarios"},
+    //{association: "comentarios"},
   ], })
   .then(resultados =>{
-    return res.render("buscar",{"searchResults": resultados, buscar} )
+    return res.render("resultadoBusqueda",{"searchResults": resultados, resultadoBusqueda} )
+    //return res.redirect("/perfil/profile")
   })
   .catch (err => console.log(err))
-},
+}, 
 borrar: (req,res)=>{
   let primaryKey = req.params.id;
   productos.destroy({

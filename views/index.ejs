@@ -24,24 +24,24 @@
 		<img src="images/home-banner.jpeg" alt="Banner de ofertas">
 	</div>
 	<!-- /Banner -->
-
+	
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Novedades</h2>
 			</div>
-			<% productos.forEach(function(producto){ %>
+			<% productos.forEach(function(productos){ %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/product/<%-producto.id %>">
+						<a href="/productos/detail/<%-productos.id %>">
 							<figure class="product-box_image">
-								<img src="<%-producto.imagen %>" alt="koenigsegg">
+								<img src="<%-productos.imagen %>" alt="koenigsegg">
 							</figure>
 							<article class="product-box_data">
-								<h2><%=producto.marca %></h2>
-								<p><%-producto.modelo %></p>
-								<p><%-producto.descripcion %></p>
+								<h2><%=productos.marca %></h2>
+								<p><%-productos.modelo %></p>
+								<p><%-productos.descripcion %></p>
 							</article>
 						</a>
 					</section>

@@ -52,17 +52,17 @@ let config={
 };
 const Usuario = sequelize.define(alias,cols,config);
 
-/*Usuario.associate = function (models) {
-    Usuario.hasMany(models.producto, {
+Usuario.associate = function (models) {
+    Usuario.hasMany(models.Productos, {
         as: "productos",
-        foreignKey: "usuarios_id"
+        foreignKey: "usuario_id"
 
     });
-    Usuario.hasMany(models.comentario, {
+    Usuario.hasMany(models.Comentarios, {
         as: "comentarios",
-        foreignKey: "usuarios_id"
+        foreignKey: "usuario_id"
 
-    });*/
+    });
+    
 
-return Usuario;
-}
+}; return Usuario; }

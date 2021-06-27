@@ -52,13 +52,13 @@ let config={
     updatedAt: false,
 };
 const Producto = sequelize.define(alias,cols,config);
-/*Producto.associate = (models)=> {
+ Producto.associate = (models)=> {
     //relacion
-    Producto.belongsTo (models.Usuario, {
+    Producto.belongsTo (models.Usuarios, {
         as: 'usuario',
         foreignKey: 'usuario_id'
     })
-    }*/
+    }
     
 return Producto;
 }

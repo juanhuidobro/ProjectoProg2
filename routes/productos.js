@@ -17,10 +17,10 @@ var storage = multer.diskStorage({
 
 
 router.get('/', productosController.index); 
-router.get('/detalle/:id', productosController.show)
+router.get('/detail/:id', productosController.show)
 //buscar productos 
 
-router.get ('/searchResultados/:id', productosController.searchResults)
+//router.get ('/searchResultados/:id', productosController.searchResults)
 
 //agregar productos 
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+		<!-- Include Head -->
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link width="" rel="shortcut icon" href="./images/logoTerminado.png" />
+			
+			<title> Car O </title>
+					<!-- Font Awesome Stylesheet -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+			<!-- Bootstrap Grid Stylesheet -->
+			<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
+			<!-- Own Stylesheet -->
+			<link rel="stylesheet" href="/stylesheets/app.css">
+		</head>
+
+<body>
+	
+	<%-include('partials/headerDeslogueado')%>
+
+	<%  if (searchResults.length == 0) { %>
+		 <p class="error"> No se ha encontrado el resultado que se esta buscando </p>
+	<% 	} else {  %> 
+		<% for(let i = 0; i < searchResults.length; i+=1){ %>
+			<li>
+			 <a href="/productos/searchResults/<%-searchResults.imagen %>">
+				<%= searchResults[i].modelo %>
+				<figure class="product-box_image">
+					<img src="<%-searchResults.imagen %>" alt="koenigsegg">
+				</figure>
+				<img src="/public/images/" alt="koenigsegg">
+
+				<%= searchResults[i].imagen %>
+			</a> 
+			</li>
+		<% } %>
+	<% } %>
+	
+
+	<ul>
+		
+	</ul>
+	
+	<!-- footer -->
+	<%- include("./partials/footer") %>
+	<!-- /footer -->
+</body>
+
+</html>

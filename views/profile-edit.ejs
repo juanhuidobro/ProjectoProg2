@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link width="" rel="shortcut icon" href="./images/logoTerminado.png" />
+		
+		<title> Car O </title>
+				<!-- Font Awesome Stylesheet -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+		<!-- Bootstrap Grid Stylesheet -->
+		<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
+		<!-- Own Stylesheet -->
+		<link rel="stylesheet" href="/stylesheets/app.css">
+	</head>
+
 <body>
 	<%- include('./partials/headerLogueado')%> 	
 	<!-- Novedades -->
@@ -20,12 +34,12 @@
 							</div>
 				
 							<!-- Formulario Editar Perfil-->
-							<form action="input-sign" action="/" method="GET">
+							<form action="input-sign" action="/perfil/profile" method="GET">
 								<p>
 									<label for="Username">Cambiar Nombre de Usuario:</label>
 									<input type="text" placeholder="Username" name="Nombre" id="Nombre de Usuario">
 								</p>
-				
+								
 								<p>
 									<label for="Mail">Cambiar mail:</label>
 									<input type="text" placeholder="mail@gmail.com" name="Mail" id="mail">

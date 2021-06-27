@@ -13,12 +13,12 @@ let controlador = {
             })
             .catch((err)=> console.log(err));
     },
-    product:  (req, res) =>{
+   /* product:  (req, res) =>{
         db.Productos.findByPk(
             req.params.id
         ).then((resultados)=> res.render('product',{producto:resultados}))
             .catch((err)=> `Error: ${err}`)
-    },
+    }, */
     productAdd:  (req, res) =>{
         res.render('product-add');
     },
