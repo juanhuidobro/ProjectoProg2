@@ -18,6 +18,6 @@ var storage = multer.diskStorage({
 router.get('/login', perfilControlador.login);
 router.get('/profile', perfilControlador.profile);
 router.get('/register', perfilControlador.register);
-
+router.get('/profileEdit', perfilControlador.profileEdit);
 
 module.exports = router; 

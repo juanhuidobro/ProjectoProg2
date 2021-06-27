@@ -40,7 +40,62 @@ let usersControlador = {
         .catch (err => console.log(err))
         },
 
-    registrarUsuario: function(req, res){
+        registrarUsuario: function(req, res){
+            console.log(req.body);
+            const {nombre, apellido, fechaDeNacimiento, edad, email, password, passwordConfirm} = req.body;
+
+            if (email == " ") { // Si el email esta vacio 
+                let errors = {};
+                errors.register = "Email no puede estar vacio"; // errors.register o errors.registrar
+                res.locals.errors = errors
+                return res.render ('users'); //users o perfil
+
+            } else if (req.body.password == " ") { //Si la password esta vacia
+                error.register = "Password no puede estar vacio"; // errors.register o errors.registrar
+                res.locals.errors = errors
+                return res.render ('users'); //users o perfil
+
+            } else if (req.body.passwordConfirm == " ") { //Si la password esta vacia
+                error.register = "Confirmar password no puede estar vacio"; // errors.register o errors.registrar
+                res.locals.errors = errors
+                return res.render ('users'); //users o perfil
+
+            } else {
+                Usuario.findOne ({
+                    where: [{email:email}]
+                }) .then (Usuario => {
+                    if (Usuario != null) {
+                        errors.register = "Email ya existe";
+                        res.locals.errors = errors
+                        return res.render ('users'); //users o perfil
+                    } else if (password != passwordConfirm) {
+                        errors.register = "Los passwords no coinciden";
+                        res.locals.errors = errors
+                        return res.render ('users'); //users o perfil
+                    } else {
+                        bcrypt.hashSync (password, saltRounds, function(err, passowrdHash) {
+                            console.log('passwordHash: passwordHash');
+                            Usuario.create ({
+                                nombre: nombre,
+                                apellido: apellido,
+                                fechaDeNacimiento: fechaDeNacimiento,
+                                edad: edad,
+                                email: email,
+                                passowrd: passowrdHash,
+                                avatar: req.file.filename
+                            })
+                        }) .then (Usuario => {
+                           /* console.log(usuario.get({
+                            plain: true */
+                        })
+                        res.redirect ('/perfil/registrarUsuario')
+                    }
+                }) .catch (err => console.log(err))
+            } 
+            
+        },
+
+    /* registrarUsuario: function(req, res){
         console.log(req.body);
         const {nombre, apellido, fechaDeNacimiento,edad, email,  password, passwordConfirm} = req.body;
 
@@ -65,12 +120,13 @@ let usersControlador = {
         });
         
           
-    },
+    }, */
+
     logout: function(req, res){
         req.session.destroy();
         res.clearCookie('userId');
         return res.redirect('/perfil/login')
         //deslogue, rompo sesion, y borro cookie
-    },
+    }, 
 }
 module.exports = usersControlador
