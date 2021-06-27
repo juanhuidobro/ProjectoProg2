@@ -4,8 +4,6 @@ const productosController = require('../controller/productosControlador');
 const multer = require ('multer');
 const path = require('path');
 
-router.get('/', productosController.index);
-
 var storage = multer.diskStorage({
       destination: function (req, file, cb) {
         cb(null,  'public/images/products')

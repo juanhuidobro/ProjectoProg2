@@ -52,5 +52,17 @@ let config={
 };
 const Usuario = sequelize.define(alias,cols,config);
 
+/*Usuario.associate = function (models) {
+    Usuario.hasMany(models.producto, {
+        as: "productos",
+        foreignKey: "usuarios_id"
+
+    });
+    Usuario.hasMany(models.comentario, {
+        as: "comentarios",
+        foreignKey: "usuarios_id"
+
+    });*/
+
 return Usuario;
 }

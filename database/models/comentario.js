@@ -22,6 +22,14 @@ module.exports = (sequelize, dataTypes) => {
             allowNull:false,
             type: dataTypes.DATE, 
         },
+        usuario_id:{
+            allowNull: false,
+            type: dataTypes.INTEGER,
+        },
+        producto_id:{
+            allowNull: false,
+            type: dataTypes.INTEGER,
+        } 
     };
     let config={
         tableName:"comentarios",

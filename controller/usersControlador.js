@@ -40,7 +40,7 @@ let usersControlador = {
         .catch (err => console.log(err))
         },
 
-        registrarUsuario: function(req, res){
+        /*registrarUsuario: function(req, res){
             console.log(req.body);
             const {nombre, apellido, fechaDeNacimiento, edad, email, password, passwordConfirm} = req.body;
 
@@ -85,17 +85,17 @@ let usersControlador = {
                                 avatar: req.file.filename
                             })
                         }) .then (Usuario => {
-                           /* console.log(usuario.get({
-                            plain: true */
+                           // console.log(usuario.get({
+                           // plain: true 
                         })
                         res.redirect ('/perfil/registrarUsuario')
                     }
                 }) .catch (err => console.log(err))
             } 
             
-        },
+        }, */
 
-    /* registrarUsuario: function(req, res){
+     registrarUsuario: function(req, res){
         console.log(req.body);
         const {nombre, apellido, fechaDeNacimiento,edad, email,  password, passwordConfirm} = req.body;
 
@@ -109,7 +109,7 @@ let usersControlador = {
                 edad: edad,
                 email: email,
                 password: passwordHash,
-                avatar: req.file.filename
+               // avatar: req.file.filename
             }).then(usuario => {
                 // let's assume the default of isAdmin is false:
                 console.log(usuario.get({
@@ -120,7 +120,7 @@ let usersControlador = {
         });
         
           
-    }, */
+    }, 
 
     logout: function(req, res){
         req.session.destroy();

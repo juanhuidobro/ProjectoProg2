@@ -22,6 +22,13 @@ let perfilControlador = {
             .catch(err => console.log(err))
             res.render('profile')
         },
+    profileDelete:  (req, res) =>{ 
+            let primaryKey = req.params.id;
+            usuarios.findByPk(primaryKey)
+            .then(resultados => res.render('profileDelete', {resultados}))
+            .catch(err => console.log(err))
+            res.render('profile')
+        },
 
 }
 
