@@ -37,17 +37,20 @@ let productosControlador = {
         db.Productos.create({
             marca:marca,
             modelo:modelo,
-            imagen: `/public/images/${req.file.filename}`,
+            imagen: `/images/products/${req.file.filename}`,
             descripcion:descripcion,
             precio:precio,
             email:email,
-            usuario_id: req.session.usuario.id
+            usuario_id: req.session.user.id
         }).then(producto => {
             console.log(producto.get({
+              
             plain: true
             }));
+            return res.redirect("/")
+
           }).catch(error => console.log(error)); 
-    return res.redirect("/")
+    
 },
 searchResults:(req,res) =>{
   let resultadoBusqueda = req.query.search

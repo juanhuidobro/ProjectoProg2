@@ -23,7 +23,7 @@ let usersControlador = {
         }).then(usuario => {
             bcrypt.compare(password, usuario.password, function(err, result) {
                 if(result){
-                    req.session.usuario = usuario
+                    req.session.user = usuario
                     return res.redirect('/');
                 }
                 else

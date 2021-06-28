@@ -6,11 +6,11 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        created_at: {
+        createdAt: {
             type: dataTypes.DATE,
             allowNull: true,
         },
-        updated_at: {
+        updatedAt: {
             type: dataTypes.DATE,
             allowNull: true,
         },
@@ -47,9 +47,8 @@ module.exports = (sequelize, dataTypes) => {
 };
 let config={
     tableName:"productos",
-    timeStamps: false,
-    createdAt: false,
-    updatedAt: false,
+    timeStamps: true,
+ 
 };
 const Producto = sequelize.define(alias,cols,config);
  Producto.associate = (models)=> {
