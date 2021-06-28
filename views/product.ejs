@@ -100,17 +100,14 @@
 
 				<%	} %>
 
-					<form class="form" action="/product/detail/<%= producto.id %>" method="POST">
-					
-					
-						<p>
-							<label for="email"> </label>
-						</p>	
-						<p>
-								<label for="Descripcion"> Comentario </label>
-								<input type="text" placeholder="Comentario" name="Comentario" id="Comentario">
-						</p>
+				<form class="form" action="/productos/comentarios/<%= producto.id %>" method="POST">
+
+					<p>
+							<label for="Descripcion"> Comentario </label>
+							<input type="text" placeholder="Comentario" name="texto" id="Comentario">
+					</p>
 						
+				
 						<!--<p>
 							<label for="Fecha">Fecha</label>
 							<input type="text" placeholder="Fecha" name="Fecha" id="Fecha">

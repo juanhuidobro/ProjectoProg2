@@ -37,6 +37,6 @@ router.get ('/update', productosController.update)
 
 router.get('/searchResults', productosController.searchResults)
 
-
+router.post('/comentarios/:id', productosController.comentario)
 
 module.exports = router;

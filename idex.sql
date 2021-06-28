@@ -5,8 +5,8 @@ USE Proyecto_Parcial;
 
 CREATE TABLE usuarios (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    created_at timestamp NULL DEFAULT NULL,
-    updated_at timestamp NULL DEFAULT NULL,
+    createdAt timestamp NULL DEFAULT NULL,
+    updatedAt timestamp NULL DEFAULT NULL,
     nombre VARCHAR(50) NOT NULL,
 	apellido VARCHAR(50) NOT NULL,
     fechaDeNacimiento VARCHAR(100) NOT NULL,
@@ -17,8 +17,8 @@ CREATE TABLE usuarios (
 );
 CREATE TABLE productos (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    created_at timestamp NULL DEFAULT NULL,
-    updated_at timestamp NULL DEFAULT NULL,
+    createdAt timestamp NULL DEFAULT NULL,
+    updatedAt timestamp NULL DEFAULT NULL,
     marca VARCHAR(50) NOT NULL,
     modelo VARCHAR(50) NOT NULL,
 	imagen VARCHAR(300) NOT NULL,
@@ -31,8 +31,8 @@ CREATE TABLE productos (
 
 CREATE TABLE comentarios (
 	id INT KEY AUTO_INCREMENT,
-    created_at timestamp NULL DEFAULT NULL,
-    updated_at timestamp NULL DEFAULT NULL,
+    createdAt timestamp NULL DEFAULT NULL,
+    updatedAt timestamp NULL DEFAULT NULL,
     texto varchar (100) not null,
 	fecha varchar (50) not null,
     usuario_id INT NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE comentarios (
 
 
 
-INSERT INTO usuarios VALUES (default, null, null, 'Nicolas', 'Bellomo', 14/03/2000, 20,'Nicolasbellomo@gmail.com', 'Contraseña', '/images/users/default-image.png');
+INSERT INTO usuarios VALUES (default, null, null, 'Nicolas', 'Bellomo', 14/03/2000, 20,'Nicolasbellomo@gmail.com', 'Contraseña', 'images/users/default-image.png');
 INSERT INTO usuarios VALUES (default, null, null, 'Juan', 'Perez', 23/06/1999,35 , 'Juanperez@gmail.com', 'Contraseña','images/users/default-image.png');
 INSERT INTO usuarios VALUES (default, null, null, 'Juana', 'Martinez', 17/09/1998, 40,'Juanamartinez@gmail.com', 'Contraseña','images/users/default-image.png');
 INSERT INTO usuarios VALUES (default, null, null,'Andrea', 'Bocelli', 30/10/2001, 19,'Andreabocelli@gmail.com', 'Contraseña','images/users/default-image.png');
@@ -59,7 +59,7 @@ INSERT INTO productos VALUES (default, null, null,'Masseratti', 'La berlina','/i
 INSERT INTO productos VALUES (default, null, null,'Masseratti', 'Ghibli','/images/products/autos8.jpeg', 'El Ghibli es un modelo de Maserati, con carrocería berlina y cuatro puertas que mide 4,97 metros de longitud, 1,95 de anchura y 1,46 de altura y su batalla es de 2,99 metros. El Ghibli tiene el honor de ser el primer Maserati en montar un motor diésel','$4.500.000', 'Frangomez@gmail.com', '5');
 INSERT INTO productos VALUES (default, null, null,'El Maserati', 'MC20','/images/products/autos9.jpeg', 'ofrece conectividad a través del programa Maserati Connect. Incluye navegación conectada, Alexa integrada y punto de conexión wifi. El motor que incorpora el Maserati MC20 es un V6 biturbo de 3.0 litros capaz de desarrollar una potencia de 630 caballos y un par máximo de 730 Newton metro','$2.400.000', 'Frangomez@gmail.com', '5');
 INSERT INTO productos VALUES (default, null, null,'Bugatti', 'Veyron','/images/products/autos10.jpeg', 'Las prestaciones del Bugatti Veyron hablan por sí solas con una aceleración de 0 a 100 Km/h en 2,5 segundos y una velocidad máxima de 408 Km/h en los Veyron con motor de 1.001 CV y 431.072 km/h en la versión Super Sport de 1.200 CV que fue empleada para batir el récord de velocidad máxima.','$10.000.000', 'Frangomez@gmail.com', '5');
-
+select * from comentarios;
 INSERT INTO comentarios VALUES (default, null, null,'El auto es de alta gama y el color es hermoso, super recomensable', 14/03/2021,1,1);
 INSERT INTO comentarios VALUES (default, null, null,'¿Tendran otro color?', 15/03/2020,2,2);
 INSERT INTO comentarios VALUES (default, null, null,'Me llego muy rapido, gracias', 10/03/2019,3,3);

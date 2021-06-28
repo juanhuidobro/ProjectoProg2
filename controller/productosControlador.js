@@ -22,6 +22,8 @@ let productosControlador = {
       },
       include: [
           { association: "usuario" },
+        ],order: [
+          ['fecha', 'DESC' ]
       ],})
       .then (comentarios => {
         ;
@@ -29,7 +31,7 @@ let productosControlador = {
       })
     .catch(err => console.log(err))
   },
-
+  
     agregarProducto: function(req, res) {
         console.log(req.body);
         const {marca, modelo, descripcion, precio, email} = req.body; 
@@ -112,7 +114,29 @@ update: (req,res)=>{
   })
 }*/
 
+comentario: (req, res) => {
+  if(req.session.user == undefined){
+      return res.redirect(`/perfil/login`)
+  }
+  else{
+      let comentario = {
+          texto: req.body.texto,
+          producto_id: req.params.id,
+          usuario_id: req.session.user.id,
+          fecha: new Date()
+      }
+
+      db.Comentarios.create(comentario)
+                .then(() =>
+                    res.redirect(`/productos/detail/${req.params.id}`)
+                )
+                .catch(err => console.log(`el error es ${err}`))
+        }
+    },
+
+
 };
+
 
 
 module.exports = productosControlador;
