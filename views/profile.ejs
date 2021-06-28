@@ -28,7 +28,7 @@
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-				<!--	<h1 class="main-title"> usuario.nombre -->
+					<h1 class="main-title"> <%=locals.user.nombre%>
 						<a href="/perfil/profile">
 							<i class="fas fa-cog"></i>
 						</a>
@@ -38,8 +38,7 @@
 				<div>
 					<ul class="perfil-datos">
 						
-						<li>200 seguidores</li>
-						<li>300 comentarios</li>
+						<li><%=usuario.comentarios ? usuario.comentarios.length:0%> comentarios</li>
 					</ul>
 				</div>
 			</div>
@@ -56,7 +55,22 @@
 	
 
 			<!-- Show mis productos -->
-
+			<% usuario.productos.forEach(function(producto){ %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/productos/detail/<%-producto.id %>">
+							<figure class="product-box_image">
+								<img src="<%-producto.imagen %>" alt="koenigsegg">
+							</figure>
+							<article class="product-box_data">
+								<h2><%=producto.marca %></h2>
+								<p><%-producto.modelo %></p>
+								<p><%-producto.descripcion %></p>
+							</article>
+						</a>
+					</section>
+				</div>
+		    <% }); %>
 		<!--<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href="/home/product">

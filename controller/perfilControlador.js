@@ -8,7 +8,11 @@ let perfilControlador = {
         res.render('login',{errors:{login:''}})
     },
     profile:  (req, res) =>{ 
-        res.render('profile')
+        db.Usuarios.findByPk(`${req.session.user.id}`,{
+            include: [{association: 'comentarios'},{association: 'productos'}]
+          })
+        .then(resultados => res.render('profile', {usuario:resultados}))
+        .catch (err => console.log(err))
     },
     register:  (req, res) =>{ 
         console.log('entro');
@@ -17,9 +21,11 @@ let perfilControlador = {
    
     profileEdit:  (req, res) =>{ 
 
-        if (req.session.users != null ) {
-            db.Usuarios.findByPk(`${req.session.users.id}`)
-            .then(resultados => res.render('profileEdit', {resultados}))
+        if (req.session.user != null ) {
+            db.Usuarios.findByPk(`${req.session.user.id}`,{
+                include: [{association: 'comentarios'},{association: 'productos'}]
+              })
+            .then(resultados => res.render('profile-edit', {usuario:resultados}))
             .catch (err => console.log(err))
         }
            // let primaryKey = req.params.id;
@@ -30,10 +36,9 @@ let perfilControlador = {
         },
     profileDelete:  (req, res) =>{ 
             let primaryKey = req.params.id;
-            Usuarios.findByPk(primaryKey)
-            .then(resultados => res.render('profileDelete', {resultados}))
+            Usuarios.destroy({where:{id:primaryKey}})
+            .then(resultados => res.render('profile', {resultados}))
             .catch(err => console.log(err))
-            res.render('profile')
         },
 
 }

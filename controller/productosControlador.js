@@ -25,7 +25,7 @@ let productosControlador = {
       ],})
       .then (comentarios => {
         ;
-        res.render('product',{producto, comentarios})})
+        res.render('product',{producto:producto, comentarios:comentarios})})
       })
     .catch(err => console.log(err))
   },
@@ -37,7 +37,7 @@ let productosControlador = {
         db.Productos.create({
             marca:marca,
             modelo:modelo,
-            imagen: `/images/products/${req.file.filename}`,
+            imagen: `images/products/${req.file.filename}`,
             descripcion:descripcion,
             precio:precio,
             email:email,

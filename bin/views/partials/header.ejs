@@ -49,8 +49,8 @@
 				</ul>
 			</nav>
 		</div>
-        <% if(locals.usuario){ %>
-            <h2>Hola: <%= usuario.nombre %></h2>
+        <% if(locals.user){ %>
+            <h2>Hola: <%= locals.user.nombre %></h2>
            <!-- <img src="/images/avatar/ />-->
             <form action="/login/logout" method="POST">
               <button type="submit">Logout</button>
