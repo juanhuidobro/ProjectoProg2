@@ -19,20 +19,24 @@
 	
 	<%-include('partials/headerDeslogueado')%>
 
-	<%  if (searchResults.length == 0) { %>
+	<%  if (searchResults.length == 0) { %> <!-- Si lo buscas y no lo encuentra aparece esto-->
 		 <p class="error"> No se ha encontrado el resultado que se esta buscando </p>
 	<% 	} else {  %> 
 		<% for(let i = 0; i < searchResults.length; i+=1){ %>
 			<li>
+				<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
 			 <a href="/productos/searchResults/<%-searchResults.imagen %>">
-				<%= searchResults[i].modelo %>
-				<figure class="product-box_image">
-					<img src="<%-searchResults.imagen %>" alt="koenigsegg">
-				</figure>
-				<img src="/public/images/" alt="koenigsegg">
-
-				<%= searchResults[i].imagen %>
+				<h2 class="products-title"> <%= searchResults[i].modelo %> </h2>
+			
+				<figure class="product-box_image"></figure>
+				<img src="/<%= searchResults[i].imagen %>" alt="<%-searchResults.modelo%>" class="img">
+				
+				<a href="/productos/detail/<%=searchResults[i].id%>"> </a>
+			</figure>
 			</a> 
+		</section>
+		</div>
 			</li>
 		<% } %>
 	<% } %>

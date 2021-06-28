@@ -67,6 +67,7 @@ searchResults:(req,res) =>{
   .then(resultados =>{
     return res.render("resultadoBusqueda",{"searchResults": resultados, resultadoBusqueda} )
     //return res.redirect("/perfil/profile")
+    
   })
   .catch (err => console.log(err))
 }, 
