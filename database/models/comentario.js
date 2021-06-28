@@ -40,8 +40,8 @@ module.exports = (sequelize, dataTypes) => {
     Comentario.associate = (models)=> {
         //relacion
         Comentario.belongsTo (models.Usuarios, {
-            as: 'usuario',
-            foreignKey: 'usuario_id'
+            as: 'usuario', //el modelo con el que se relaciona 
+            foreignKey: 'usuario_id' // el objeto literal donde detallamos la relacion
         })
         Comentario.belongsTo (models.Productos, {
             as: 'producto',

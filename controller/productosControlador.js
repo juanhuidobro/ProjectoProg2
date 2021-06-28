@@ -5,15 +5,15 @@ const productos = db.Productos;
 let productosControlador = {
   index: (req,res)=>{
     producto.findAll({
-    include: [{association: 'usuario'},],
-    order: [['created_at', 'DESC']]})
+    include: [{association: 'usuario'},], // asociamos la tabla usuario con producto fijarse en models Producto.js
+    order: [['created_at', 'DESC']]}) // esto es para que los productos agregados esten en descendentes  
       .then((resultados)=> res.render('productos',{resultados}))
       .catch((err)=>`Error:${err}`)
   },
   show: (req,res) =>{
     let primaryKey = req.params.id;
     productos.findByPk (primaryKey,{
-      include: [{association: 'usuario'}]
+      include: [{association: 'usuario'}] // asociamos la tabla usuario con producto fijarse en models Producto.js
     })
     .then (producto => {
         console.log(producto)
@@ -21,9 +21,9 @@ let productosControlador = {
           producto_id: producto.id //Este producto lo traemos del model, que son todos los comentarios de un solo producto
       },
       include: [
-          { association: "usuario" },
+          { association: "usuario" }, // asociamos la tabla usuario con producto fijarse en models Producto.js
         ],order: [
-          ['fecha', 'DESC' ]
+          ['fecha', 'DESC' ] // esto es para las fechas descendentes 
       ],})
       .then (comentarios => {
         ;
@@ -36,14 +36,14 @@ let productosControlador = {
         console.log(req.body);
         const {marca, modelo, descripcion, precio, email} = req.body; 
         
-        db.Productos.create({
-            marca:marca,
+        db.Productos.create({ // agregar a la db
+            marca:marca, //contiene los mismos campos que la db
             modelo:modelo,
-            imagen: `/images/products/${req.file.filename}`,
+            imagen: `/images/products/${req.file.filename}`, //para agregar la foto
             descripcion:descripcion,
             precio:precio,
             email:email,
-            usuario_id: req.session.user.id
+            usuario_id: req.session.user.id // toda informacion que se almacene en session se podra utilizar en todas las paginas
         }).then(producto => {
             console.log(producto.get({
               
@@ -61,7 +61,7 @@ searchResults:(req,res) =>{
     where:{[op.or]:[//buscar por marca o modelo o
       {modelo:{[op.like]: resultadoBusqueda}}, //buscar algo parecido 
       {marca:{[op.like]: resultadoBusqueda}},
-      //{descripcion:{[op.like]: `${req.query.search}`}},
+    
       
     ]
   },include: [
@@ -115,7 +115,7 @@ comentario: (req, res) => {
           texto: req.body.texto,
           producto_id: req.params.id,
           usuario_id: req.session.user.id,
-          fecha: new Date()
+          fecha: new Date() //crea un nuevo objeto el cual agregar la fecha para usarlo en la linea 26
       }
 
       db.Comentarios.create(comentario)

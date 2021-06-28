@@ -52,14 +52,14 @@ let config={
 const Usuario = sequelize.define(alias,cols,config);
 
 Usuario.associate = function (models) {
-    Usuario.hasMany(models.Productos, {
-        as: "productos",
-        foreignKey: "usuario_id"
+    Usuario.hasMany(models.Productos, { // el mismo usuario puede tener varios productos
+        as: "productos", 
+        foreignKey: "usuario_id" 
 
     });
-    Usuario.hasMany(models.Comentarios, {
+    Usuario.hasMany(models.Comentarios, { // el mismo usario puede tener varios comentarios
         as: "comentarios",
-        foreignKey: "usuario_id"
+        foreignKey: "usuario_id" // esta es la foreignKey que relaciona la tabla de comentario con usuario
 
     });
     

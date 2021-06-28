@@ -6,10 +6,10 @@ const path = require('path');
 
 var storage = multer.diskStorage({
       destination: function (req, file, cb) {
-        cb(null,  'public/images/products')
+        cb(null,  'public/images/products') // donde se almacena las imagenes una vez subidas
       },
       filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname)) //extname es para que extraiga el nombre del archivo y use ese
       }
     })
     

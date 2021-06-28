@@ -4,14 +4,11 @@ const op = db.Sequelize.Op;
 const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 
-// db.Usuario.create({
-    
-// })
+
 let usersControlador = {
  
     login: function(req, res){
-        //const {email,password} = req.body;
-        //console.log(req.body);
+       
         Usuario.findOne({
             where:{email: req.body.email},
         }).then(user => {
@@ -20,13 +17,13 @@ let usersControlador = {
             if(user == null){
                 errors.login = "email es incorrecto";
                 res.locals.error = errors;
-               // return res.render ('users')
+              
                return res.render('login',{errors:errors});
 
             } else if(bcrypt.compareSync(req.body.password, user.password) == false){ 
                         errors.login ="password es incorrecta";
                         res.locals.error =errors;
-                        //return res.render('users');
+                        
                         return res.render('login',{errors:errors})
                 }else {
                     req.session.user =user;

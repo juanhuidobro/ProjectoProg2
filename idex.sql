@@ -43,11 +43,11 @@ CREATE TABLE comentarios (
 
 
 
-INSERT INTO usuarios VALUES (default, null, null, 'Nicolas', 'Bellomo', 14/03/2000, 20,'Nicolasbellomo@gmail.com', 'Contraseña', 'images/users/default-image.png');
-INSERT INTO usuarios VALUES (default, null, null, 'Juan', 'Perez', 23/06/1999,35 , 'Juanperez@gmail.com', 'Contraseña','images/users/default-image.png');
-INSERT INTO usuarios VALUES (default, null, null, 'Juana', 'Martinez', 17/09/1998, 40,'Juanamartinez@gmail.com', 'Contraseña','images/users/default-image.png');
-INSERT INTO usuarios VALUES (default, null, null,'Andrea', 'Bocelli', 30/10/2001, 19,'Andreabocelli@gmail.com', 'Contraseña','images/users/default-image.png');
-INSERT INTO usuarios VALUES (default, null, null, 'Fran', 'Gomez', 01/02/1999, 34,'Frangomez@gmail.com', 'Contraseña','images/users/default-image.png');
+INSERT INTO usuarios VALUES (default, null, null, 'Nicolas', 'Bellomo', '14/03/2000', 20,'Nicolasbellomo@gmail.com', 'Contraseña', 'images/users/default-image.png');
+INSERT INTO usuarios VALUES (default, null, null, 'Juan', 'Perez', '23/06/1999',35 , 'Juanperez@gmail.com', 'Contraseña','images/users/default-image.png');
+INSERT INTO usuarios VALUES (default, null, null, 'Juana', 'Martinez', '17/09/1998', 40,'Juanamartinez@gmail.com', 'Contraseña','images/users/default-image.png');
+INSERT INTO usuarios VALUES (default, null, null,'Andrea', 'Bocelli', '30/10/2001', 19,'Andreabocelli@gmail.com', 'Contraseña','images/users/default-image.png');
+INSERT INTO usuarios VALUES (default, null, null, 'Fran', 'Gomez', '01/02/1999', 34,'Frangomez@gmail.com', 'Contraseña','images/users/default-image.png');
 
 INSERT INTO productos VALUES (default, null, null,'Koenigsegg','Agera','/images/products/autos1.jpeg','El Koenigsegg Agera es un superdeportivo biplaza sueco capaz de alcanzar en su versión más potente 1.155 caballos. Entre sus hitos más representativos podemos citar su capacidad para alcanzar los 300 km/h desde parado y volverse a detener por completo en sólo 21.19 segundos.', '$3.000.000', 'Nicolasbellomo@gmail.com', '1');
 INSERT INTO productos VALUES (default, null, null,'Ferrari',' 488 Pista','/images/products/autos2.jpeg','El Ferrari 488 Pista es la versión más radical del Ferrari 488 GTB. Es el sucesor del 458 Speciale, considerado por algunos como el Ferrari más divertido jamás construido. Su motor, el V8 twin-turbo, entrega 720 CV de potencia a 8.000 rpm y un par máximo de 770 Nm a 3.000 rpm.', '$2.000.000', 'Juanperez@gmail.com', '2');
@@ -60,7 +60,7 @@ INSERT INTO productos VALUES (default, null, null,'Masseratti', 'Ghibli','/image
 INSERT INTO productos VALUES (default, null, null,'El Maserati', 'MC20','/images/products/autos9.jpeg', 'ofrece conectividad a través del programa Maserati Connect. Incluye navegación conectada, Alexa integrada y punto de conexión wifi. El motor que incorpora el Maserati MC20 es un V6 biturbo de 3.0 litros capaz de desarrollar una potencia de 630 caballos y un par máximo de 730 Newton metro','$2.400.000', 'Frangomez@gmail.com', '5');
 INSERT INTO productos VALUES (default, null, null,'Bugatti', 'Veyron','/images/products/autos10.jpeg', 'Las prestaciones del Bugatti Veyron hablan por sí solas con una aceleración de 0 a 100 Km/h en 2,5 segundos y una velocidad máxima de 408 Km/h en los Veyron con motor de 1.001 CV y 431.072 km/h en la versión Super Sport de 1.200 CV que fue empleada para batir el récord de velocidad máxima.','$10.000.000', 'Frangomez@gmail.com', '5');
 select * from comentarios;
-INSERT INTO comentarios VALUES (default, null, null,'El auto es de alta gama y el color es hermoso, super recomensable', 14/03/2021,1,1);
-INSERT INTO comentarios VALUES (default, null, null,'¿Tendran otro color?', 15/03/2020,2,2);
-INSERT INTO comentarios VALUES (default, null, null,'Me llego muy rapido, gracias', 10/03/2019,3,3);
-INSERT INTO comentarios VALUES (default, null, null,'Muy conforme con mi compra, recomendable!', 03/03/2010,4,4);
+INSERT INTO comentarios VALUES (default, null, null,'El auto es de alta gama y el color es hermoso, super recomensable', '14/03/2021',1,1);
+INSERT INTO comentarios VALUES (default, null, null,'¿Tendran otro color?', '15/03/2020',2,2);
+INSERT INTO comentarios VALUES (default, null, null,'Me llego muy rapido, gracias', '10/03/2019',3,3);
+INSERT INTO comentarios VALUES (default, null, null,'Muy conforme con mi compra, recomendable!', '03/03/2010',4,4);

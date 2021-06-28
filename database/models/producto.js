@@ -54,8 +54,8 @@ const Producto = sequelize.define(alias,cols,config);
  Producto.associate = (models)=> {
     //relacion
     Producto.belongsTo (models.Usuarios, {
-        as: 'usuario',
-        foreignKey: 'usuario_id'
+        as: 'usuario', //el modelo con el que se relaciona 
+        foreignKey: 'usuario_id' // el objeto literal donde detallamos la relacion
     })
     }
     
