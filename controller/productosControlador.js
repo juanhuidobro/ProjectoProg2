@@ -39,7 +39,7 @@ let productosControlador = {
         db.Productos.create({
             marca:marca,
             modelo:modelo,
-            imagen: `images/products/${req.file.filename}`,
+            imagen: `/images/products/${req.file.filename}`,
             descripcion:descripcion,
             precio:precio,
             email:email,
