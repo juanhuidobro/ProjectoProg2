@@ -29,10 +29,10 @@ router.post('/agregarProducto', upload.single('imagen'), productosController.agr
 //router.post('/', upload.single('imagen'), productosController.agregarProducto);
 
 router.get ('/borrar/:id', productosController.borrar)
-router.get ('/destroy', productosController.destroy)
+router.post('/detail/:id', productosController.destroy)
 router.get('/edit/:id', productosController.edit)
 
-router.get ('/update', productosController.update)
+router.post ('/edit/:id', productosController.update)
 
 
 router.get('/searchResults', productosController.searchResults)

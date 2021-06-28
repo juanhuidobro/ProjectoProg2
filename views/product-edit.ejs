@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<!-- Include Head -->
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="./images/logoTerminado.png" />
-	
-	<title> Car O </title>
-			<!-- Font Awesome Stylesheet -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
-	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/app.css">
-</head>
-
-<body>
-	
-	<%-include('./partials/headerLogueado')%>
+<%-include('./partials/headerLogueado')%>
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -48,7 +29,6 @@
 								<p>
 									<label for="Foto del producto">Foto del producto</label>
 									<input id="imagen"  type="file" name="imagen" required>
-									<img src="/public/images/products" alt="">
 									
 								</p>
 
@@ -68,7 +48,11 @@
 								</p>
 				
 								<p>
-									<button id="button" name="editar-perfil" type="submit" >Editar Producto</button>
+									<button id="button" name="product-edit" type="submit" >Editar Producto</button>
+								</p>
+
+								<p>
+									<!-- <a class="btn btn-warning" href="/detail/ %=producto.id% ">BORRAR PRODUCTO</a> -->
 								</p>
 				
 							</form>
@@ -80,6 +64,3 @@
 	<!-- footer -->
 	<%- include("./partials/footer") %>
 	<!-- /footer -->
-</body>
-
-</html>

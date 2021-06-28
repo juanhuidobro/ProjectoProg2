@@ -105,14 +105,6 @@ update: (req,res)=>{
   .then(()=> res.redirect('/'))
   .catch(err => console.log(err))
 },
-/*crearComentario: (req,res)=>{
-  console.log (req.body)
-  const {comentario, fecha} = req.body
-  db.Comentarios.create({
-    comentario: comentario,
-    fecha: fecha,
-  })
-}*/
 
 comentario: (req, res) => {
   if(req.session.user == undefined){
