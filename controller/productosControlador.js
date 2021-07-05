@@ -1,21 +1,22 @@
-const db = require('../database/models');
+const db = require('../database/models'); //Se requiere la base de datos exportada en models index.js
 const op = db.Sequelize.Op;
 const productos = db.Productos;
 
-let productosControlador = {
+let productosControlador = { 
+  //Metodos que se encargan los request 
   index: (req,res)=>{
     producto.findAll({
     include: [{association: 'usuario'},], // asociamos la tabla usuario con producto fijarse en models Producto.js
     order: [['created_at', 'DESC']]}) // esto es para que los productos agregados esten en descendentes  
       .then((resultados)=> res.render('productos',{resultados}))
-      .catch((err)=>`Error:${err}`)
+      .catch((err)=>`Error:${err}`) //Callback para atrapar un error generado en la promesa
   },
   show: (req,res) =>{
     let primaryKey = req.params.id;
     productos.findByPk (primaryKey,{
       include: [{association: 'usuario'}] // asociamos la tabla usuario con producto fijarse en models Producto.js
     })
-    .then (producto => {
+    .then (producto => { //Solo si show recibe un resultado luego lo recibe el then dentro de su callback em el parametro producto
         console.log(producto)
         db.Comentarios.findAll({where: {
           producto_id: producto.id //Este producto lo traemos del model, que son todos los comentarios de un solo producto
@@ -27,9 +28,10 @@ let productosControlador = {
       ],})
       .then (comentarios => {
         ;
-        res.render('product',{producto:producto, comentarios:comentarios})})
+        res.render('product',{producto:producto, comentarios:comentarios})})// Renderiza la vista product.ejs 
+                              //Objeto literal:nombre utilizado para disponer de la informacion en las vistas
       })
-    .catch(err => console.log(err))
+    .catch(err => console.log(err)) //Callback para atrapar un error generado en la promesa
   },
   
     agregarProducto: function(req, res) {
@@ -49,7 +51,7 @@ let productosControlador = {
               
             plain: true
             }));
-            return res.redirect("/")
+            return res.redirect("/") //Promesa añadida 
 
           }).catch(error => console.log(error)); 
     
@@ -131,7 +133,7 @@ comentario: (req, res) => {
 
 
 
-module.exports = productosControlador;
+module.exports = productosControlador; //Exportamos la variable
 
 
         

@@ -1,7 +1,8 @@
 module.exports = {
+  //conexion con la base de datos
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "root", 
     "database": "proyecto_parcial",
     "host": "127.0.0.1",
     "dialect": "mysql"

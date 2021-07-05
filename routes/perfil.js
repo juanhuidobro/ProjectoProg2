@@ -19,6 +19,6 @@ router.get('/login', perfilControlador.login);
 router.get('/profile', perfilControlador.profile);
 router.get('/register', perfilControlador.register);
 router.get('/profileEdit', perfilControlador.profileEdit);
-router.get('/profileDelete/:id', perfilControlador.profileDelete);
+router.get('/profileDelete/:id', perfilControlador.profileDelete); //:id parametro obligatorio que tiene que traer
 
 module.exports = router; 

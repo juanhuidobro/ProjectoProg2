@@ -1,12 +1,12 @@
 var createError = require('http-errors');
-var express = require('express');
+var express = require('express'); //Se requieren los modulos (son los archivos js)
 var path = require('path');
-let session = require('express-session');
+let session = require('express-session'); //Se requiere la session
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-let db = require('./database/models')
+let db = require('./database/models') //Se requiere la base de datos
 
-var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/index'); 
 var usersRouter = require('./routes/users');
 var productosRouter = require('./routes/productos');
 var home = require('./routes/home');
@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 })
 
 app.use(function(req, res, next){
-  if(req.cookies.userId != undefined && req.session.user == undefined){
+  if(req.cookies.userId != undefined && req.session.user == undefined){ 
     db.User.findByPk(req.cookies.userId)
       .then(function(user){
         req.session.user = user;
